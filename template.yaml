@@ -21,7 +21,7 @@ Parameters:
     Description: "Name of GitHub Branch"
 
   TargetOUIds:
-    Type: CommaDelimitedList
+    Type: String
     Description: 'Comma separated list of OUs'
 
   OrgId:
