@@ -6,6 +6,5 @@
     "TargetOUIds": $secrets.AWS_ORG_ROOT_ID,
     "OrgId": $secrets.PORT_ORG_ID,
     "IntegrationIdentifier": "aws-v3",
-    "OIDCSubject": $secrets.PORT_OIDC_SUBJECT,
-    "PortIoTemplateLocation": "https://port-cloudformation-templates.s3.eu-west-1.amazonaws.com/stable/ocean/aws-v3/multi-account-integration.yaml"
+    "OIDCSubject": $secrets.PORT_OIDC_SUBJECT
 }

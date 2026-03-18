@@ -20,10 +20,6 @@ Parameters:
     Type: String
     Description: "Name of GitHub Branch"
 
-  PortIoTemplateLocation:
-    Type: String
-    Description: "S3 URL of the Port.io CloudFormation template to deploy"
-
   TargetOUIds:
     Type: CommaDelimitedList
     Description: 'Comma separated list of OUs'
@@ -45,7 +41,9 @@ Resources:
   PortIoIntegrationStack:
     Type: AWS::Serverless::Application
     Properties:
-      Location: !Ref PortIoTemplateLocation
+      # NOTE: Limitation of SAM
+      # ref. https://github.com/aws/serverless-application-model/issues/694
+      Location: "https://port-cloudformation-templates.s3.eu-west-1.amazonaws.com/stable/ocean/aws-v3/multi-account-integration.yaml"
       Parameters:
         TargetOUIds: !Ref TargetOUIds
         OrgId: !Ref OrgId
