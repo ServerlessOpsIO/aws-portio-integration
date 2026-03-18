@@ -1,5 +1,5 @@
 {
   "org:domain": "infrastructure",
-  "org:system": "aws-organizations",
+  "org:system": "infrastructure-services",
   "org:component": $env.GITHUB_REPOSITORY_NAME_PART_SLUG_CS
 }

@@ -10,4 +10,4 @@ spec:
   type: iac
   lifecycle: production
   owner: group:0319y80a3hmm9y7
-  system: system:aws-organizations
+  system: system:infrastructure-services

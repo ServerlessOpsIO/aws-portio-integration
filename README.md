@@ -1,4 +1,4 @@
-# AWS Organizations / aws-portio-integration
+# Infrastructure-Services / aws-portio-integration
 
 Port.io Integration
 
