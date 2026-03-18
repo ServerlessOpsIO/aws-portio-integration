@@ -1,0 +1,6 @@
+{
+    "Domain": "infrastructure",
+    "System": "aws-organizations",
+    "Component": $env.GITHUB_REPOSITORY_NAME_PART_SLUG_CS,
+    "CodeBranch": $env.GITHUB_REF_SLUG_CS
+}

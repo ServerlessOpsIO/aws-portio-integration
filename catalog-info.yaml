@@ -1,0 +1,13 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: aws-portio-integration
+  description: Port.io Integration
+  annotations:
+    github.com/project-slug: ServerlessOpsIO/aws-portio-integration
+spec:
+  type: iac
+  lifecycle: production
+  owner: group:0319y80a3hmm9y7
+  system: system:aws-organizations
