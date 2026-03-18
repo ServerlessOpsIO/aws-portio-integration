@@ -1,9 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: >
-  aws-portio-integration
-
-  Port.io Integration
+Description: Port.io Integration
 
 
 Parameters:
@@ -23,4 +20,34 @@ Parameters:
     Type: String
     Description: "Name of GitHub Branch"
 
-Resources: {}
+  PortIoTemplateLocation:
+    Type: String
+    Description: "S3 URL of the Port.io CloudFormation template to deploy"
+
+  TargetOUIds:
+    Type: CommaDelimitedList
+    Description: 'Comma separated list of OUs'
+
+  OrgId:
+    Type: String
+    Description: 'AWS Organization ID'
+
+  IntegrationIdentifier:
+    Type: String
+    Description: 'Unique identifier for the integration, e.g. portio-integration'
+
+  OIDCSubject:
+    Type: String
+    Description: 'The OIDC subject claim to be used in the IAM Role trust policy'
+    NoEcho: 'true'
+
+Resources:
+  PortIoIntegrationStack:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: !Ref PortIoTemplateLocation
+      Parameters:
+        TargetOUIds: !Ref TargetOUIds
+        OrgId: !Ref OrgId
+        IntegrationIdentifier: !Ref IntegrationIdentifier
+        OIDCSubject: !Ref OIDCSubject

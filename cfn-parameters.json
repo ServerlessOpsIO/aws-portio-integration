@@ -2,5 +2,10 @@
     "Domain": "infrastructure",
     "System": "infrastructure-services",
     "Component": $env.GITHUB_REPOSITORY_NAME_PART_SLUG_CS,
-    "CodeBranch": $env.GITHUB_REF_SLUG_CS
+    "CodeBranch": $env.GITHUB_REF_SLUG_CS,
+    "TargetOUIds": $secrets.AWS_ORG_ROOT_ID,
+    "OrgId": $secrets.PORT_ORG_ID,
+    "IntegrationIdentifier": "aws-v3",
+    "OIDCSubject": $secrets.PORT_OIDC_SUBJECT,
+    "PortIoTemplateLocation": "https://port-cloudformation-templates.s3.eu-west-1.amazonaws.com/stable/ocean/aws-v3/multi-account-integration.yaml"
 }
